@@ -1,4 +1,6 @@
 /**
  * Created by zhaolei on 15/7/21.
  */
-console.log('this is cupro-yymobile');
+var App = module.exports = function App (argument) {
+    console.log('this is yymobile');
+};
