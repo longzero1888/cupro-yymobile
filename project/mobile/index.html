@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>轻松给好评 任性送红包</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://s1.map.bdimg.com/yyfm/yytongji/2.1.1/js/yytongji.min.js"></script>
+</head>
+<body>
+    {%header%}
+    <header>
+        <img src="images/topImg1.jpg" width="100%">
+        <img src="images/topImg2.jpg" width="100%">
+        <img src="images/topImg3.jpg" width="100%">
+    </header>
+    <section class="mainCon">
+        <p class="topTxt">年年岁岁做迭代，岁岁年年各不同，百度地图每一个版本都力求最大程度服务用户，如果你也喜爱最新8.0.1百度地图，就前往App Store撰写一条5星评论吧，前400名上传好评截图的用户即可获得10元现金红包,另有20名幸运用户可获得50元现金红包！还犹豫什么，小图在这里等着你~</p>
+        <div class="threeTips">
+            <h3>参与方式</h3>
+            <p class="tipsImg"><img src="images/tipsImg.png" width="100%"></p>
+            <ul class="tipList">
+                <li>进入App Store<br>百度地图详情页<br>选择评论—撰写评论</li>
+                <li>填写五星好评后<br>截图并点击发送</li>
+                <li>上传好评截图或发送<br>截图至百度地图官<br>方微信并留下手机号</li>
+            </ul>
+        </div>
+        <div class="twoBtns">
+            <div class="topBtn">上传好评截图</div>
+            <div class="bottomBtn">去App Store 写好评</div>
+        </div>
+    </section>
+    <section class="rules">
+        <h4><img src="images/ruleTitle.png" width="100%"></h4>
+        <ul>
+            <li><span class="spanNum">1</span><span>活动时间：2015.3.17~2015.3.24</span></li>
+            <li><span class="spanNum">2</span><span>中奖信息以短信通知为准，请认真填写手机号确保正常兑奖；</span></li>
+            <li><span class="spanNum">3</span><span>撰写无意义内容或复制他人评论将取消获奖机会，每个手机号有1次获奖机会；</span></li>
+            <li><span class="spanNum">4</span><span>活动结束15个工作日内由百度工作人员通过百度钱包统一转账兑奖，打开百度地图-我的-我的钱包即可查看账户余额；</span></li>
+            <li><span class="spanNum">5</span><span>在法律法规许可范围内，百度拥有活动的解释权，本活动由百度公司主办，与Apple Inc.无关。</span></li>
+        </ul>
+    </section>
+    <script src="http://s1.map.bdimg.com/yyfm/zepto_default/1.1.4/js/zepto_default.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    $(function(){
+        var hdom = document.querySelector('html');
+        resizeFontSize();  
+        var originalWidth = 320;
+
+        $(window).resize(function(){
+            if($(window).width() != originalWidth) {
+                
+                originalWidth = getSize()['width'];
+                // ;  //将320设置为ue图原始大小
+                hdom.style.fontSize = originalWidth * 16 / 320 + "px";
+                
+            }
+            
+        })
+
+        function resizeFontSize() { 
+            // alert("resize");
+            
+            // ;  //将320设置为ue图原始大小
+            hdom.style.fontSize = getSize()['width'] * 16 / 320 + "px";
+        }
+
+        function getSize() {
+            return {
+                width :document.documentElement.clientWidth || document.body.clientWidth,
+                height :document.documentElement.clientHeight || document.body.clientHeight
+            }
+        }
+    })
+    </script>
+
+</body>
+</html>
