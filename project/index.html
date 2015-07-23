@@ -1,78 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>轻松给好评 任性送红包</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="http://s1.map.bdimg.com/yyfm/yytongji/2.1.1/js/yytongji.min.js"></script>
+    <!--meta start-->
+    <%meta%>
+    <!--meta end-->
+    <title>项目title</title>
+    <script>
+        var yytongji = {};
+        yytongji.starttime = +new Date();
+    </script>
+    <script>
+        !function(){var a={url:"http://map.baidu.com/zt/transparent.gif",key:"yyevent",perSecondFunc:void 0,start:void 0,level:[],curLevel:1,init:function(){var a=this;a.start=+new Date,a.send("_show"),a.bindReady(),window.onload=function(){var b=+new Date-window.yytongji.starttime,c=window.yytongji.bttime-window.yytongji.starttime,d=window.yytongji.ottime-window.yytongji.starttime,e=document.createElement("img");+new Date,e.src=a.url+"?"+a.key+"=_load"+"&dt="+b+"&ot="+d+"&bt="+c},a.level=window.BaiduYY&&window.BaiduYY.stayLevel?window.BaiduYY.stayLevel:[20,40,60],a.checkoutPerSecond(),a.addEvent(window,"error",function(b){var c=b.filename.match(/[^/]*$/g)[0],d=b.lineno;a.specialSend("error",c+"_"+d)})},send:function(a,b){var e,d=document.createElement("img");e=b?b:+new Date,d.src=this.url+"?"+this.key+"="+a+"&_t="+e},specialSend:function(a,b){var c=document.createElement("img"),d=+new Date;c.src=this.url+"?"+a+"="+b+"&_t="+d},afterLoad:function(){var d,a=this,b=+new Date,c=b-a.start;d=3e3>c?"speed_fast":c>=3e3&&5e3>=c?"speed_normal":"speed_slow",this.send(d)},bindReady:function(){var a=this;if(document.addEventListener)document.addEventListener("DOMContentLoaded",function(){var b,c;document.removeEventListener("DOMContentLoaded",arguments.callee,!1),yytongji.ottime=+new Date,b=window.yytongji.ottime-window.yytongji.starttime,c=document.createElement("img"),c.src=a.url+"?"+a.key+"=_domready"+"&ot="+b},!1);else if(document.attachEvent){try{document.documentElement.doScroll("left")}catch(b){return setTimeout(function(){a.bindReady()},10),void 0}yytongji.ottime=+new Date}},addEvent:function(a,b,c){window.attachEvent?a.attachEvent("on"+b,c):a.addEventListener(b,c,!1)},checkoutPerSecond:function(){var a=this;a.perSecondFunc=setInterval(function(){a.stayLevel()},1e3)},stayLevel:function(){var b,c,a=this;0!==a.level.length&&(b=+new Date,c=b-a.start,c>1e3*a.level[0]&&(a.send("stay_"+a.curLevel),a.curLevel++,a.level.shift()))},shortQuery:function(a){var c,d,e,f,g,h,i,j,k,l,m,b="0123456789abcdefghijklmnopqrstuvwxyz%._";for(a=encodeURIComponent(a.replace(/http\:\/\/map.baidu.com\/zt\//g,"")).toLowerCase(),c=a.length,d=a.substring(0,5),e=a.substring(5,c-5),f=a.substring(c-5),g=0,h=0,i=0,j=0;j<d.length;j++)g+=b.indexOf(d.charAt(j));for(k=0;k<e.length;k++)h+=b.indexOf(e.charAt(k));for(l=0;l<f.length;l++)i+=b.indexOf(f.charAt(l));return m=g+"_"+h+"_"+i}};a.init(),window._yytj=a}();
+    </script>
+    <!--link start-->
+    <%link%>
+    <!--link start-->
+
+    <!--headScript start-->
+    <%headScript%>
+    <!--headScript end-->
+    <script>
+        yytongji.bttime = +new Date();
+    </script>
 </head>
 <body>
-    <header>
-        <img src="images/topImg1.jpg" width="100%">
-        <img src="images/topImg2.jpg" width="100%">
-        <img src="images/topImg3.jpg" width="100%">
-    </header>
-    <section class="mainCon">
-        <p class="topTxt">年年岁岁做迭代，岁岁年年各不同，百度地图每一个版本都力求最大程度服务用户，如果你也喜爱最新8.0.1百度地图，就前往App Store撰写一条5星评论吧，前400名上传好评截图的用户即可获得10元现金红包,另有20名幸运用户可获得50元现金红包！还犹豫什么，小图在这里等着你~</p>
-        <div class="threeTips">
-            <h3>参与方式</h3>
-            <p class="tipsImg"><img src="images/tipsImg.png" width="100%"></p>
-            <ul class="tipList">
-                <li>进入App Store<br>百度地图详情页<br>选择评论—撰写评论</li>
-                <li>填写五星好评后<br>截图并点击发送</li>
-                <li>上传好评截图或发送<br>截图至百度地图官<br>方微信并留下手机号</li>
-            </ul>
-        </div>
-        <div class="twoBtns">
-            <div class="topBtn">上传好评截图</div>
-            <div class="bottomBtn">去App Store 写好评</div>
-        </div>
-    </section>
-    <section class="rules">
-        <h4><img src="images/ruleTitle.png" width="100%"></h4>
-        <ul>
-            <li><span class="spanNum">1</span><span>活动时间：2015.3.17~2015.3.24</span></li>
-            <li><span class="spanNum">2</span><span>中奖信息以短信通知为准，请认真填写手机号确保正常兑奖；</span></li>
-            <li><span class="spanNum">3</span><span>撰写无意义内容或复制他人评论将取消获奖机会，每个手机号有1次获奖机会；</span></li>
-            <li><span class="spanNum">4</span><span>活动结束15个工作日内由百度工作人员通过百度钱包统一转账兑奖，打开百度地图-我的-我的钱包即可查看账户余额；</span></li>
-            <li><span class="spanNum">5</span><span>在法律法规许可范围内，百度拥有活动的解释权，本活动由百度公司主办，与Apple Inc.无关。</span></li>
-        </ul>
-    </section>
-    <script src="http://s1.map.bdimg.com/yyfm/zepto_default/1.1.4/js/zepto_default.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-    $(function(){
-        var hdom = document.querySelector('html');
-        resizeFontSize();  
-        var originalWidth = 320;
 
-        $(window).resize(function(){
-            if($(window).width() != originalWidth) {
-                
-                originalWidth = getSize()['width'];
-                // ;  //将320设置为ue图原始大小
-                hdom.style.fontSize = originalWidth * 16 / 320 + "px";
-                
-            }
-            
-        })
-
-        function resizeFontSize() { 
-            // alert("resize");
-            
-            // ;  //将320设置为ue图原始大小
-            hdom.style.fontSize = getSize()['width'] * 16 / 320 + "px";
-        }
-
-        function getSize() {
-            return {
-                width :document.documentElement.clientWidth || document.body.clientWidth,
-                height :document.documentElement.clientHeight || document.body.clientHeight
-            }
-        }
-    })
-    </script>
-
+<!--bodyScript start-->
+<%bodyScript%>
+<!--bodyScript end-->
 </body>
 </html>

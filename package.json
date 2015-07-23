@@ -1,11 +1,20 @@
 {
   "name": "cupro-yymobile",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "baidu map opn default mobile project",
+  "files": [
+    "app",
+    "lib",
+    "project"
+  ],
   "main": "app/index.js",
+  "repository": "longzero1888/cupro-yymobile",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhaolei,xuyanan",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^0.9.0"
+  }
 }
