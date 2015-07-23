@@ -9,7 +9,7 @@ var s = win32 ? '\\' : '\/';
 var render = require('../lib/rendertpl');
 var dialogue = require('../lib/dialogue');
 var toDivName = '';
-
+var ignores = ['.gitignore', '.npmignore'];
 module.exports = function (divName) {
     toDivName = divName || '';
     dialogue.start(run);
@@ -21,7 +21,7 @@ function run(answers) {
     exists(tplPath, tplPathTrue, tplPathFalse);
 
     // tpl目录存在
-    function tplPathTrue(){
+    function tplPathTrue() {
         // 给path赋值
         render.path = tplPath;
         // 准备copy
@@ -43,7 +43,7 @@ function run(answers) {
     }
 
     // tpl目录不存在
-    function tplPathFalse(){
+    function tplPathFalse() {
         console.log(tplPath + ' 不存在，请重新填写');
         dialogue.start(run);
     }
@@ -76,8 +76,8 @@ function run(answers) {
                     if (err) {
                         throw err;
                     }
-                    // 判断是否为文件
-                    if (st.isFile()) {
+                    // 判断是否为文件并且不在ignores里
+                    if (st.isFile() && !isIgnore(_from)) {
                         // 创建读取流
                         readable = fs.createReadStream(_from);
                         // 创建写入流
@@ -109,6 +109,17 @@ function run(answers) {
 
         });
     }
+
+    // 排除ignore的文件
+    function isIgnore(path) {
+        for (var i = 0, n = ignores.length; i < n; i++) {
+            if (path.indexOf(ignores[i]) !== -1) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
 
 
