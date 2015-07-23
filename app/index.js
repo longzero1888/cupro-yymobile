@@ -10,9 +10,14 @@ var render = require('../lib/rendertpl');
 var dialogue = require('../lib/dialogue');
 var toDivName = '';
 var ignores = ['.gitignore', '.npmignore'];
-module.exports = function (divName) {
+
+module.exports.do = function (divName) {
     toDivName = divName || '';
     dialogue.start(run);
+};
+
+module.exports.getTpl = function () {
+    return render.tpl;
 };
 
 function run(answers) {
