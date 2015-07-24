@@ -6,6 +6,9 @@
     <!--meta end-->
     <title>项目title</title>
     <script>
+        if (!(/android|webos|ip(hone|ad|od)|opera (mini|mobi|tablet)|iemobile|windows.+(phone|touch)|mobile|fennec|kindle (Fire)|Silk|maemo|blackberry|playbook|bb10\; (touch|kbd)|Symbian(OS)|Ubuntu Touch/i.test(navigator.userAgent))/* || window.navigator.userAgent.indexOf('baidumap_IPHO') != -1 || window.navigator.userAgent.indexOf('baidumap_ANDR') != -1*/) {
+            window.location.href = 'http://map.baidu.com/zt/y2015/pc/?url=' + encodeURIComponent(window.location.href);
+        }
         var yytongji = {};
         yytongji.starttime = +new Date();
     </script>
