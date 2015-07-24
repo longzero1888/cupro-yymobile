@@ -21,35 +21,34 @@ module.exports.getTpl = function () {
 };
 
 function run(answers) {
-    var tplPath = answers['tylPath'];
-    // 判断tpl目录存在
-    exists(tplPath, tplPathTrue, tplPathFalse);
+    // 准备copy
+    var from = __dirname.replace(/app/, 'project');
+    var to = process.cwd();
+    if (toDivName !== '') {
+        to += s + toDivName;
+    }
+    var tplPath = answers.path;
+
+    // 判断是否需要tpl
+    if (answers.yes) {
+        // 需要tpl
+        exists(tplPath, tplPathTrue, tplPathFalse);
+    } else {
+        // 不需要tpl
+        existsCopy(from, to);
+    }
+
 
     // tpl目录存在
     function tplPathTrue() {
         // 给path赋值
         render.path = tplPath;
-        // 准备copy
-        var from = __dirname.replace(/app/, 'project');
-        var to = process.cwd();
-        if (toDivName !== '') {
-            to += s + toDivName;
-        }
-        // 目标目录存在就copy，不存在先创建
-        exists(to, function () {
-            // 目标目录存在
-            copy(from, to);
-        }, function () {
-            // 目标目录不存在
-            fs.mkdir(to, function () {
-                copy(from, to);
-            })
-        });
+        existsCopy(from, to);
     }
 
     // tpl目录不存在
     function tplPathFalse() {
-        console.log(tplPath + ' 不存在，请重新填写');
+        console.log(tplPath + ' 不存在，请重新填写！');
         dialogue.start(run);
     }
 
@@ -64,6 +63,20 @@ function run(answers) {
             else {
                 falseCallback();
             }
+        });
+    }
+
+    // 复制文件
+    function existsCopy(from ,to){
+        // 目标目录存在就copy，不存在先创建
+        exists(to, function () {
+            // 目标目录存在
+            copy(from, to);
+        }, function () {
+            // 目标目录不存在
+            fs.mkdir(to, function () {
+                copy(from, to);
+            })
         });
     }
 
