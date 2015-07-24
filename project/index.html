@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!--meta start-->
+    <!--meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <%meta%>
-    <!--meta end-->
+    <!--/meta-->
     <title>项目title</title>
     <script>
         if (!(/android|webos|ip(hone|ad|od)|opera (mini|mobi|tablet)|iemobile|windows.+(phone|touch)|mobile|fennec|kindle (Fire)|Silk|maemo|blackberry|playbook|bb10\; (touch|kbd)|Symbian(OS)|Ubuntu Touch/i.test(navigator.userAgent))/* || window.navigator.userAgent.indexOf('baidumap_IPHO') != -1 || window.navigator.userAgent.indexOf('baidumap_ANDR') != -1*/) {
@@ -15,21 +17,24 @@
     <script>
         !function(){var a={url:"http://map.baidu.com/zt/transparent.gif",key:"yyevent",perSecondFunc:void 0,start:void 0,level:[],curLevel:1,init:function(){var a=this;a.start=+new Date,a.send("_show"),a.bindReady(),window.onload=function(){var b=+new Date-window.yytongji.starttime,c=window.yytongji.bttime-window.yytongji.starttime,d=window.yytongji.ottime-window.yytongji.starttime,e=document.createElement("img");+new Date,e.src=a.url+"?"+a.key+"=_load"+"&dt="+b+"&ot="+d+"&bt="+c},a.level=window.BaiduYY&&window.BaiduYY.stayLevel?window.BaiduYY.stayLevel:[20,40,60],a.checkoutPerSecond(),a.addEvent(window,"error",function(b){var c=b.filename.match(/[^/]*$/g)[0],d=b.lineno;a.specialSend("error",c+"_"+d)})},send:function(a,b){var e,d=document.createElement("img");e=b?b:+new Date,d.src=this.url+"?"+this.key+"="+a+"&_t="+e},specialSend:function(a,b){var c=document.createElement("img"),d=+new Date;c.src=this.url+"?"+a+"="+b+"&_t="+d},afterLoad:function(){var d,a=this,b=+new Date,c=b-a.start;d=3e3>c?"speed_fast":c>=3e3&&5e3>=c?"speed_normal":"speed_slow",this.send(d)},bindReady:function(){var a=this;if(document.addEventListener)document.addEventListener("DOMContentLoaded",function(){var b,c;document.removeEventListener("DOMContentLoaded",arguments.callee,!1),yytongji.ottime=+new Date,b=window.yytongji.ottime-window.yytongji.starttime,c=document.createElement("img"),c.src=a.url+"?"+a.key+"=_domready"+"&ot="+b},!1);else if(document.attachEvent){try{document.documentElement.doScroll("left")}catch(b){return setTimeout(function(){a.bindReady()},10),void 0}yytongji.ottime=+new Date}},addEvent:function(a,b,c){window.attachEvent?a.attachEvent("on"+b,c):a.addEventListener(b,c,!1)},checkoutPerSecond:function(){var a=this;a.perSecondFunc=setInterval(function(){a.stayLevel()},1e3)},stayLevel:function(){var b,c,a=this;0!==a.level.length&&(b=+new Date,c=b-a.start,c>1e3*a.level[0]&&(a.send("stay_"+a.curLevel),a.curLevel++,a.level.shift()))},shortQuery:function(a){var c,d,e,f,g,h,i,j,k,l,m,b="0123456789abcdefghijklmnopqrstuvwxyz%._";for(a=encodeURIComponent(a.replace(/http\:\/\/map.baidu.com\/zt\//g,"")).toLowerCase(),c=a.length,d=a.substring(0,5),e=a.substring(5,c-5),f=a.substring(c-5),g=0,h=0,i=0,j=0;j<d.length;j++)g+=b.indexOf(d.charAt(j));for(k=0;k<e.length;k++)h+=b.indexOf(e.charAt(k));for(l=0;l<f.length;l++)i+=b.indexOf(f.charAt(l));return m=g+"_"+h+"_"+i}};a.init(),window._yytj=a}();
     </script>
-    <!--link start-->
+    <!--link-->
+    <link rel="stylesheet" href="css/reset.css">
     <%link%>
-    <!--link start-->
+    <!--/link-->
 
-    <!--headScript start-->
+    <!--headScript-->
     <%headScript%>
-    <!--headScript end-->
+    <!--/headScript-->
     <script>
         yytongji.bttime = +new Date();
     </script>
 </head>
 <body>
 
-<!--bodyScript start-->
+<!--bodyScript-->
+<script src="http://s1.map.bdimg.com/yyfm/yymobilebase/1.0.0/js/yymobilebase.min.js"></script>
 <%bodyScript%>
-<!--bodyScript end-->
+<script src="js/main.js"></script>
+<!--/bodyScript-->
 </body>
 </html>

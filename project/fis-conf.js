@@ -4,6 +4,9 @@
 fis.config.set('pack', {
     '/css/base.css': [
         '/css/reset.css'
+    ],
+    '/js/base.js':[
+        '/js/main.js'
     ]
 });
 //设置csssprites的合并间距
