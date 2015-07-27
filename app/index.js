@@ -27,30 +27,8 @@ function run(answers) {
     if (toDivName !== '') {
         to += s + toDivName;
     }
-    var tplPath = answers.path;
-
-    // 判断是否需要tpl
-    if (answers.yes) {
-        // 需要tpl
-        exists(tplPath, tplPathTrue, tplPathFalse);
-    } else {
-        // 不需要tpl
-        existsCopy(from, to);
-    }
-
-
-    // tpl目录存在
-    function tplPathTrue() {
-        // 给path赋值
-        render.path = tplPath;
-        existsCopy(from, to);
-    }
-
-    // tpl目录不存在
-    function tplPathFalse() {
-        console.log(tplPath + ' 不存在，请重新填写！');
-        dialogue.start(run);
-    }
+    render.path = answers.path || '';
+    existsCopy(from, to);
 
     // 文件是否存在
     function exists(path, trueCallback, falseCallback) {
