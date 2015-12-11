@@ -12,3 +12,8 @@ a:active{color:#000}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .clear{ clear:both;}
 html{-webkit-text-size-adjust: none;}
+.tlbs{display:none!important;}
+.ts-width{display:none!important;}
+.ts-height{display:none!important;}
+.ts-animatedd{display:none!important;}
+tlbs-flux{display:none!important;}
