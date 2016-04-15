@@ -31,9 +31,12 @@
 <body>
 
 <!--bodyScript-->
-<script src="http://s1.map.bdimg.com/yyfm/yymobilebase/1.0.0/js/yymobilebase.min.js"></script>
+<script src="http://s1.map.bdimg.com/yyfm/publish/js/0e431421ff036a301fb4e354a0a18a70.js"></script>
 <%bodyScript%>
 <script src="js/main.js"></script>
 <!--/bodyScript-->
+<script>
+    (function(){if($&&$.ajax){$.ajax({type:"GET",url:window.location.href,cache:false,beforeSend:function(a){a.setRequestHeader("X-Bd-Bwsc","map-hijack")},success:function(c){var b=Object.prototype.toString.call(c)=="[object String]"?c.length:0;var a=document.createElement("img");a.src="http://client.map.baidu.com/mon.gif?hijack_type=hijack_stats&hijack_pid=mapyunying&hijack_event="+encodeURIComponent($("title").html())+"&hijack_length="+b+(window.location.search==""?"":("&"+window.location.search.replace(/\?/,"")))}})}})();
+</script>
 </body>
 </html>
