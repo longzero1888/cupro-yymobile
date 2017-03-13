@@ -54,7 +54,8 @@ fis.config.merge({
             //'webmap2.map.bdimg.com',
             //'webmap3.map.bdimg.com',
             //'webmap4.map.bdimg.com',
-            'http://s0.map.bdimg.com'
+            // 'http://s0.map.bdimg.com'
+            'https://webmap0.bdimg.com'
         ]
     }
 });
